@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  /* 背景にimgフォルダのbg.pngをセット。繰り返しなし */
+
+  background-image: url('../img/bg.jpg');
+  background-size: cover;
+  height: 100vh;
+  Overflow: hidden;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  justify-content: space-around;
+  width: 100%;
+  height: 40px;
+  background: rgba(255, 255, 255, .8);
+}
+
+header p {
+  margin: auto 0;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+
+  position: relative;
+  top: 80px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* モグラとその枠
+ =======================*/
+.box {
+  width: 100px;
+  height: 100px;
+  padding: 2px;
+  /* 通常時は枠線の分を空白にしておく */
+  margin: 5%;
+  display: inline-block;
+  user-select: none; /* テキスト選択を防止 */
+}
+
+/* クラス：boxにカーソルが当たったとき */
+/* .box.active:hover {
+
+  padding: 0;
+  /* 空白部分 をリセット *//*
+  border: 2px solid #f00;
+  /* 赤枠を書く *//*
+  opacity: .8;
+} */
+
+/* モグラ画像：クラス：box 内の img */
+.box img {
+
+  display: none;
+  /* 最初は非表示 */
+  width: 90%;
+  height: 90%;
+  margin: 5%;
+}
+
+/* モグラ出現時 */
+.active img,
+.active#dialog {
+  display: block;
+  /* ブロックレベル要素に変更して表示 */
+}
+
+/* ダイアログ
+ =======================*/
+#dialog {
+  /* ダイアログ自身 */
+  display: none;
+  /* 最初は非表示 */
+  position: absolute;
+  /* 位置固定 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 上下左右中央寄せ（複数行記述が必要） */
+
+  background: #efe;
+  padding: 30px 100px;
+  border-radius: 2px;
+}
+
+#dialog:hover {
+  /* ダイアログにカーソルが当たったとき */
+  /* display: block; */
+  /* ブロックレベル要素に変更して表示 */
+}
+
+#dlg-close {
+  /* 閉じるボタン */
+  /* 位置を絶対座標にして上から10px、右から10pxの位置に（複数行記述が必要） */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /* その他、大きさや文字サイズ等が概ねプリント通りになるよう調整（複数行記述が必要） */
+}

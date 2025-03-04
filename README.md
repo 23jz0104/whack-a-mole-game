@@ -1,1 +1,5 @@
-# whack-a-mole-game
+# モグラたたきゲーム
+画面遷移を伴わないとても簡易的なモグラたたきゲームです。JavaScriptの練習用として作成したものになります。
+
+## 🛠 技術スタック
+- HTML、CSS、JavaScript
